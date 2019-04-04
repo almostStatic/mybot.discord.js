@@ -179,7 +179,7 @@ bot.on("message", async message => {
   }
 
 
-  if(cmd === `${prefix}test`){
+if(cmd === `${prefix}test`){
 
     let bicon = bot.user.displayAvatarURL;
     let testembed = new Discord.RichEmbed()
@@ -189,11 +189,23 @@ bot.on("message", async message => {
     return message.channel.send(testembed);
   }
 
+if(cmd === `${prefix}git`){
+
+    let uicon = user.displayAvatarURL;
+    let gitrepembed = new Discord.RichEmbed()
+    .setDescription("*Here you go, https://github.com/asadhum2005/mybot.discord.js*")
+    .setColor("#ff0000")
+    .setThumbnail(uicon)
+    return message.channel.send(gitrepembed);
+  }
+
+
 
 });
 
 
-
+// github repository :
+// https://github.com/asadhum2005/mybot.discord.js
 
 /* Bot token:
 
