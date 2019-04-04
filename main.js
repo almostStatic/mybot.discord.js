@@ -8,7 +8,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is ALIVE !!!!!`);
 
-  bot.user.setActivity("Prefix: ? | ?invite | ?owner", {type: "WATCHING"});
+  bot.user.setActivity("Prefix: ' | 'invite | 'owner", {type: "WATCHING"});
 
   //bot.user.setGame("on SourceCade!");
 });
@@ -144,14 +144,17 @@ bot.on("message", async message => {
     return message.channel.send(mytagembed);
   }
 
-  if(cmd === `${prefix}help`){
+  if(cmd === `${prefix}help-kick`){
 
-    let helpembed = new Discord.RichEmbed()
-    .setDescription("Here is the help command!")
-    .setColor("#a6bc62")
-    .addField("`?kixk @user <reason>`")
+    let kickhelpembed = new Discord.RichEmbed();
+    tologkick = "In order to log the use of `'kick` command, you must create a new channel with the name 'incidents'; then the bot will automatically log the use of the kick command. Make **sure that the bot has permissionsto send messages and embed links in that channel!**"
 
-    return message.channel.send(helpembed);
+    .setDescription("Here is your help yo use `'kick`!")
+    .setColor("#62bc80")
+    .addField("`?kixk @user <reason>`", tologkick)
+
+
+    return message.channel.send(kickhelpembed);
   }
 
 
@@ -167,13 +170,15 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}invite`){
 
+    serverinvurl = "https://discord.gg/2dbQt8d";
+    invurl = "https://discordapp.com/oauth2/authorize?client_id=517730016520568853&scope=bot&permissions=8";
     let bicon = bot.user.displayAvatarURL;
     let inviteEmbed = new Discord.RichEmbed()
     .setDescription("Useful Links!")
     .setColor("#bc9562")
     .setThumbnail(bicon)
-    .addField("Invite Bot: https://discordapp.com/oauth2/authorize?client_id=517730016520568853&scope=bot&permissions=8")
-    .addField("Support Server: https://discord.gg/2dbQt8d")
+    .addField("Invite Bot: ", invurl)
+    .addField("Support Server: ",serverinvurl )
     
     return message.channel.send(inviteEmbed);
   }
@@ -191,14 +196,35 @@ if(cmd === `${prefix}test`){
 
 if(cmd === `${prefix}git`){
 
-    let uicon = user.displayAvatarURL;
     let gitrepembed = new Discord.RichEmbed()
     .setDescription("*Here you go, https://github.com/asadhum2005/mybot.discord.js*")
-    .setColor("#ff0000")
-    .setThumbnail(uicon)
+    .setColor("#dd8e49")
+
     return message.channel.send(gitrepembed);
+
   }
 
+  if(cnd === `${prefix}myav`){
+
+    let avembed = new Discord.RichEmbed()
+
+  .setImage(message.author.avatarURL)
+  .setColor('#275BF0')
+
+  return message.channel.send(avembed);
+
+  }
+
+  if(cnd === `${prefix}drinkc`){
+
+    let drinkembed = new Discord.RichEmbed()
+
+.setDescription(message.member.user.tag, "has drunk a mug of coffee!")
+  .setColor('#275BF0')
+
+  return message.channel.send(drinkembed);
+
+  }
 
 
 });
