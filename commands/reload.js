@@ -2,7 +2,15 @@ const Discord = require("discord.js");
 
 
 module.exports.run = (bot, message, args) => {
-  if(!args || args.size < 1) return message.reply("Must provide a command name to reload.");
+
+  let ucantdo = new Discord.RichEmbed()
+
+  .setDescription("**This is an owner-only command.**")
+  .setColor("RANDOM")
+
+  if(message.author.id !== "501710994293129216") return message.channel.send({embed: ucantdo});
+
+  if(!args || args.size < 1) return message.reply("Provide a command name to reload");
   const commandName = args[0];
   // Check if the command exists and is valid
   if(!bot.commands.has(commandName)) {
