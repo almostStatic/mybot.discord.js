@@ -9,6 +9,11 @@
   "author": "asad",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "canvas": "^2.4.1",
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
+    "file-system": "^2.2.2",
+    "ms": "^2.1.1",
+    "snekfetch": "^4.0.4"
   }
 }
