@@ -48,7 +48,7 @@ bot.user.setActivity(`/help | /links | Serving ${bot.guilds.size} servers`);
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
   
-    const ownerid = "501710994293129216";
+    const ownerid = "YOUR_ID_HERE";
     const prefix = botconfig.prefix;
     const messageArray = message.content.split(" ");
     const cmd = messageArray[0];
